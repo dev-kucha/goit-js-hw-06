@@ -5,9 +5,18 @@ console.log(`Number of categories: ${categories.length}`);
 
 //2. Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега <h2>) и количество элементов в категории (всех вложенных в него <li>).
 
-for (const category of categories) {
+// for (const category of categories) {
+//   let header = category.querySelector('h2').innerHTML;
+//   let namberElements = category.querySelectorAll('ul li').length;
+//   console.log(`Category: ${header}`);
+//   console.log(`Elements: ${namberElements}`);
+// }
+
+const categoriesArr = [...categories];
+
+const headersAndNumbersOfCategories = categoriesArr.map(category => {
   let header = category.querySelector('h2').innerHTML;
   let namberElements = category.querySelectorAll('ul li').length;
   console.log(`Category: ${header}`);
   console.log(`Elements: ${namberElements}`);
-}
+});
